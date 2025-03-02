@@ -32,25 +32,12 @@
   word-wrap: break-word;
 }
 
-.overview-content
-  .figures
-  .main
-  .temp-card
-  .weather
-  .temperature
-  .temp-details {
+.overview-content .figures .main .temp-card .weather .temperature .temp-details {
   display: flex;
   flex-direction: row;
 }
 
-.overview-content
-  .figures
-  .main
-  .temp-card
-  .weather
-  .temperature
-  .temp-details
-  .temp-value {
+.overview-content .figures .main .temp-card .weather .temperature .temp-details .temp-value {
   color: var(--color-text-primary);
   font-size: 64px;
   font-family: Inter, sans-serif;
@@ -58,40 +45,17 @@
   word-wrap: break-word;
 }
 
-.overview-content
-  .figures
-  .main
-  .temp-card
-  .weather
-  .temperature
-  .temp-details
-  .temp-value
-  .temp-deg {
+.overview-content .figures .main .temp-card .weather .temperature .temp-details .temp-value .temp-deg {
   padding-left: 0px;
   margin-left: -9px;
 }
 
-.overview-content
-  .figures
-  .main
-  .temp-card
-  .weather
-  .temperature
-  .temp-details
-  .temp-value
-  .temp-unit {
+.overview-content .figures .main .temp-card .weather .temperature .temp-details .temp-value .temp-unit {
   padding-left: 0px;
   margin-left: -9px;
 }
 
-.overview-content
-  .figures
-  .main
-  .temp-card
-  .weather
-  .temperature
-  .temp-details
-  .cloud-icon {
+.overview-content .figures .main .temp-card .weather .temperature .temp-details .cloud-icon {
   padding-left: 0px;
   margin-left: 30px;
 }
@@ -111,13 +75,7 @@
   position: relative;
 }
 
-.overview-content
-  .figures
-  .main
-  .temp-card
-  .icon
-  .description
-  .description-title {
+.overview-content .figures .main .temp-card .icon .description .description-title {
   color: var(--color-text-primary);
   font-size: 32px;
   font-family: Inter, sans-serif;
@@ -149,14 +107,7 @@
     height: 150px;
   }
 
-  .overview-content
-    .figures
-    .main
-    .temp-card
-    .weather
-    .temperature
-    .temp-details
-    .temp-value {
+  .overview-content .figures .main .temp-card .weather .temperature .temp-details .temp-value {
     font-size: 60px;
   }
 }
@@ -172,20 +123,12 @@
     height: 150px;
   }
 
-  .overview-content
-    .figures
-    .main
-    .temp-card
-    .weather
-    .temperature
-    .temp-details
-    .cloud-icon
-    img {
+  .overview-content .figures .main .temp-card .weather .temperature .temp-details .cloud-icon img {
     display: none;
   }
 
   .temp-card .data {
-    background-image: url("images/Group.svg");
+    background-image: url('images/group.svg');
     background-position: top right;
     background-repeat: no-repeat;
     background-size: auto;
@@ -195,25 +138,12 @@
     font-size: 11px;
   }
 
-  .overview-content
-    .figures
-    .main
-    .temp-card
-    .weather
-    .temperature
-    .temp-details
-    .temp-value {
+  .overview-content .figures .main .temp-card .weather .temperature .temp-details .temp-value {
     font-size: 43px;
     margin-top: 20px;
   }
 
-  .overview-content
-    .figures
-    .main
-    .temp-card
-    .icon
-    .description
-    .description-title {
+  .overview-content .figures .main .temp-card .icon .description .description-title {
     font-size: 20px;
   }
 
