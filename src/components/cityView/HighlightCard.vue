@@ -8,7 +8,7 @@
       </HighlightItem>
 
       <HighlightItem title="Air Quality Index" icon="aqi.svg">
-        <span class="value-number">{{ aqi ?? "--" }}</span>
+        <span class="value-number">{{ aqi ?? '--' }}</span>
       </HighlightItem>
 
       <HighlightItem title="Wind Speed" icon="wind-icon.svg">
@@ -25,34 +25,21 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import HighlightItem from "@/components/cityView/HighlightItem.vue";
+  import { computed } from 'vue';
+  import HighlightItem from '@/components/cityView/HighlightItem.vue';
+  import type { WeatherData } from '@/models/WeatherData';
 
-interface WeatherMain {
-  pressure?: number;
-  humidity?: number;
-}
+  const props = defineProps<{
+    weatherData: WeatherData;
+    aqi?: number;
+  }>();
 
-interface WeatherWind {
-  speed?: number;
-}
-
-interface WeatherData {
-  main?: WeatherMain;
-  wind?: WeatherWind;
-}
-
-const props = defineProps<{
-  weatherData: WeatherData;
-  aqi?: number;
-}>();
-
-// Computed properties for safe access
-const pressure = computed(() => props.weatherData?.main?.pressure ?? "--");
-const humidity = computed(() => props.weatherData?.main?.humidity ?? "--");
-const windSpeed = computed(() => props.weatherData?.wind?.speed ?? "--");
+  // Computed properties for safe access
+  const pressure = computed(() => props.weatherData?.main?.pressure ?? '--');
+  const humidity = computed(() => props.weatherData?.main?.humidity ?? '--');
+  const windSpeed = computed(() => props.weatherData?.wind?.speed ?? '--');
 </script>
 
 <style scoped>
-@import "@/assets/styles/cityView/highlight-card.css";
+  @import '@/assets/styles/cityView/highlight-card.css';
 </style>

@@ -26,41 +26,28 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+  import { computed } from 'vue';
+  import type { WeatherData } from '@/models/WeatherData';
 
-interface WeatherData {
-  sys: {
-    sunrise?: number;
-    sunset?: number;
-    dayLength?: string;
+  const props = defineProps<{
+    weatherData: WeatherData;
+  }>();
+
+  const formatTime = (timestamp?: number) => {
+    if (!timestamp) return { time: '--', period: '--' };
+    const [time, period] = new Date(timestamp)
+      .toLocaleTimeString('en-US', {
+        timeStyle: 'short'
+      })
+      .split(' ');
+    return { time, period };
   };
-}
 
-const props = defineProps<{
-  weatherData: WeatherData;
-}>();
-
-const formatTime = (timestamp?: number) => {
-  if (!timestamp) return { time: "--", period: "--" };
-  const [time, period] = new Date(timestamp)
-    .toLocaleTimeString("en-US", {
-      timeStyle: "short",
-    })
-    .split(" ");
-  return { time, period };
-};
-
-const formattedSunrise = computed(() =>
-  formatTime(props.weatherData?.sys?.sunrise)
-);
-const formattedSunset = computed(() =>
-  formatTime(props.weatherData?.sys?.sunset)
-);
-const formattedDayLength = computed(
-  () => props.weatherData?.sys?.dayLength || "--"
-);
+  const formattedSunrise = computed(() => formatTime(props.weatherData?.sys?.sunrise));
+  const formattedSunset = computed(() => formatTime(props.weatherData?.sys?.sunset));
+  const formattedDayLength = computed(() => props.weatherData?.sys?.dayLength || '--');
 </script>
 
 <style scoped>
-@import "@/assets/styles/cityView/sun-card.css";
+  @import '@/assets/styles/cityView/sun-card.css';
 </style>
