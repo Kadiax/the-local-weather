@@ -1,0 +1,86 @@
+.saved-cities .card {
+  background: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-radius: 25px;
+  width: auto;
+  height: 134px;
+  padding: 18px 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saved-cities .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.saved-cities .weather-info {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  width: auto;
+}
+
+.saved-cities .figures {
+  display: flex;
+}
+
+.saved-cities .figures .today-temp {
+  color: var(--color-text-primary);
+  font-size: 48px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.saved-cities .figures .today-high-low {
+  align-self: end;
+  color: var(--color-text-secondary);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.saved-cities .city-name {
+  align-self: stretch;
+  font-family: Inter;
+  color: var(--color-text-primary);
+  font-size: 15px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.saved-cities .card img {
+  align-self: end;
+  width: 56px;
+  height: 56px;
+}
+
+/*Tablets Laptops Desktops*/
+@media (max-width: 1440px) {
+  .saved-cities .card {
+    width: auto;
+    height: 134px;
+    padding: 18px 15px;
+  }
+
+  .saved-cities .figures .today-temp {
+    font-size: 40px;
+  }
+
+  .saved-cities .figures .today-high-low {
+    font-size: 10px;
+  }
+}
+
+/*Mobiles*/
+@media (min-width: 360px) and (max-width: 700px) {
+  .home .saved-cities {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}

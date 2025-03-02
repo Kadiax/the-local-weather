@@ -1,0 +1,197 @@
+.highlight-card {
+  height: fit-content;
+  background: radial-gradient(circle, #162850 0%, #121a2d 100%);
+  border-radius: 30px;
+  padding: 16px 18px;
+}
+
+.highlight-card .title {
+  color: var(--color-text-primary);
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+}
+
+.highlight-card .cards {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px 25px;
+}
+
+.highlight-card .cards .card {
+  background: var(--color-bg-secondary);
+  height: 170px;
+  border-radius: 20px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-card .cards .card .card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview-content
+  .figures
+  .side
+  .highlight-card
+  .cards
+  .card
+  .card-header
+  .header-title {
+  color: var(--color-text-primary);
+  font-size: 15px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+}
+.highlight-card .cards .card .card-value {
+  align-self: center;
+  margin-top: 25px;
+}
+
+.highlight-card .cards .card .aqi {
+  margin-top: 15px;
+}
+
+.highlight-card .cards .card .humidity {
+  margin-top: 32px;
+}
+
+.overview-content
+  .figures
+  .side
+  .highlight-card
+  .cards
+  .card
+  .card-value
+  .value-number {
+  font-size: 37px;
+  color: var(--color-text-primary);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+
+.overview-content
+  .figures
+  .side
+  .highlight-card
+  .cards
+  .card
+  .card-value
+  .value-unit {
+  font-size: 29px;
+  color: var(--color-text-primary);
+  margin-left: 10px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+
+/*Between Tablets Laptops Desktops*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-value
+    .value-number {
+    font-size: 29px;
+  }
+
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-value
+    .value-unit {
+    font-size: 22px;
+  }
+
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-header
+    .header-icon
+    img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-header
+    .header-icon
+    .air-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-header
+    .header-title {
+    font-size: 9px;
+  }
+
+  .highlight-card .cards .card {
+    height: 100px;
+  }
+
+  .highlight-card .cards .card .card-value {
+    margin-top: 0;
+  }
+}
+
+/*Mobiles*/
+@media (min-width: 360px) and (max-width: 700px) {
+  .highlight-card {
+    padding: 16px 8px;
+  }
+
+  .highlight-card .cards {
+    grid-gap: 8px 8px;
+  }
+
+  .highlight-card .cards .card {
+    height: auto;
+  }
+
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-value
+    .value-number {
+    font-size: 25px;
+  }
+
+  .overview-content
+    .figures
+    .side
+    .highlight-card
+    .cards
+    .card
+    .card-value
+    .value-unit {
+    font-size: 17px;
+    margin-left: 2px;
+  }
+}

@@ -1,0 +1,46 @@
+.overview-content {
+  margin-top: 20px;
+}
+
+.overview-content .figures {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr;
+  grid-gap: 25px 25px;
+  padding: 20px;
+}
+
+.overview-content .figures .main {
+  min-width: 28%;
+  height: 100%;
+}
+
+.overview-content .figures .side {
+  min-width: 20%;
+  height: 100%;
+}
+
+.overview-content .remove-button {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0px;
+}
+
+.overview-content .remove-button i {
+  color: var(--color-text-error);
+}
+
+/*Tablets*/
+@media (max-width: 1024px) {
+  .overview-content .figures {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Mobiles*/
+@media (min-width: 360px) and (max-width: 700px) {
+  .overview-content .figures {
+    width: 90%;
+  }
+}

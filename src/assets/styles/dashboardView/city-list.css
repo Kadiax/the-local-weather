@@ -1,0 +1,22 @@
+.saved-cities {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px 39px;
+}
+
+/*Tablets Laptops Desktops*/
+@media (max-width: 1440px) {
+  .saved-cities {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px 12px;
+  }
+}
+
+/*Mobiles*/
+@media (min-width: 360px) and (max-width: 700px) {
+  .saved-cities {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
