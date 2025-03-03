@@ -1,6 +1,6 @@
 <template>
   <div class="pollution-card">
-    <div class="title">Pollution</div>
+    <div class="title">{{ $t('CityView.AsyncCityView.PollutionCard.title') }}</div>
 
     <div class="polluant" v-for="(value, name) in polluantComponents" :key="name">
       <div class="tooltip-container">
@@ -27,7 +27,7 @@
         <div class="value-max">
           {{ polluantDetails[name]?.thresholds.poor ?? '--' }}
         </div>
-        <div class="unit">μg/m³</div>
+        <div class="unit">{{ $t('common.units.polluants') }}</div>
       </div>
     </div>
   </div>

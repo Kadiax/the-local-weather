@@ -1,6 +1,6 @@
 <template>
   <div class="hourly-card">
-    <div class="title">Hourly Weather (5 days)</div>
+    <div class="title">{{ $t('CityView.AsyncCityView.HourlyCard.title') }}</div>
     <div class="weather-cards">
       <div class="weather-card" v-for="hour in hourlyWeather" :key="hour.dt">
         <div class="weather-details">

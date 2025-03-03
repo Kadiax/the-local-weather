@@ -13,14 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-
-const props = defineProps<{
-  title: string;
-  icon: string;
-}>();
+  defineProps<{
+    title: string;
+    icon: string;
+  }>();
 </script>
 
 <style scoped>
-@import "@/assets/styles/cityView/highlight-card.css";
+  @import '@/assets/styles/cityView/highlight-card.css';
 </style>

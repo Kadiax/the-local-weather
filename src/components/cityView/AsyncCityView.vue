@@ -1,5 +1,5 @@
 <template>
-  <p v-if="hasFetchWeatherError">Sorry, there was a problem. The weather data has not been retrieved.</p>
+  <p v-if="hasFetchWeatherError">{{ $t('CityView.AsyncCityView.fetchWeatherError') }}</p>
   <div v-else class="overview-content">
     <div class="figures">
       <div class="main">
@@ -15,7 +15,7 @@
     <div v-if="!route.query.preview" class="remove-button">
       <button class="button remove" @click="removeCity">
         <i class="fa-solid fa-trash-can"></i>
-        <span class="title">Remove</span>
+        <span class="title">{{ $t('common.actions.remove.label') }}</span>
       </button>
     </div>
   </div>

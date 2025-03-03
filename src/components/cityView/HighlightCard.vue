@@ -1,22 +1,22 @@
 <template>
   <div class="highlight-card">
-    <div class="title">Today’s Highlights</div>
+    <div class="title">{{ $t('CityView.AsyncCityView.HighlightCard.title') }}</div>
     <div class="cards">
-      <HighlightItem title="Pressure" icon="pressure-icon.svg">
+      <HighlightItem :title="$t('CityView.AsyncCityView.HighlightCard.firstHighlightItem')" icon="pressure-icon.svg">
         <span class="value-number">{{ pressure }}</span>
         <span class="value-unit">hPa</span>
       </HighlightItem>
 
-      <HighlightItem title="Air Quality Index" icon="aqi.svg">
+      <HighlightItem :title="$t('CityView.AsyncCityView.HighlightCard.secondHighlightItem')" icon="aqi.svg">
         <span class="value-number">{{ aqi ?? '--' }}</span>
       </HighlightItem>
 
-      <HighlightItem title="Wind Speed" icon="wind-icon.svg">
+      <HighlightItem :title="$t('CityView.AsyncCityView.HighlightCard.thirdHighlightItem')" icon="wind-icon.svg">
         <span class="value-number">{{ windSpeed }}</span>
         <span class="value-unit">m/s</span>
       </HighlightItem>
 
-      <HighlightItem title="Humidity" icon="humidity-icon.svg">
+      <HighlightItem :title="$t('CityView.AsyncCityView.HighlightCard.fourthHighlightItem')" icon="humidity-icon.svg">
         <span class="value-number">{{ humidity }}</span>
         <span class="value-unit">%</span>
       </HighlightItem>

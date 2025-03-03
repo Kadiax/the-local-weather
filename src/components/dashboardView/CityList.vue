@@ -1,10 +1,10 @@
 <template>
-  <p v-if="hasFetchWeatherError">Sorry, there was a problem. The weather data has not been retrieved.</p>
+  <p v-if="hasFetchWeatherError">{{ $t('DashboardView.CityList.fetchError') }}</p>
   <div v-else class="saved-cities">
     <template v-if="savedCities.length">
       <CityCard v-for="city in savedCities" :key="city.id" :city="city" @click="navigateToCity(city)" />
     </template>
-    <p v-else>No locations added. To start tracking a location, search in the field above.</p>
+    <p v-else>{{ $t('DashboardView.CityList.noCities') }}</p>
   </div>
 </template>
 

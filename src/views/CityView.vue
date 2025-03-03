@@ -2,17 +2,17 @@
   <div class="page-content overview">
     <!--City Header-->
     <div class="overview-header">
-      <h2 class="main-title">Overview</h2>
+      <h2 class="main-title">{{ $t('CityView.title') }}</h2>
       <div class="buttons">
         <RouterLink :to="{ name: 'dashboard' }">
           <div class="button go-back">
             <span><i class="fa-solid fa-circle-arrow-left"></i></span>
-            <span class="title">Go back</span>
+            <span class="title">{{ $t('common.actions.back.label') }}</span>
           </div>
         </RouterLink>
         <div v-if="route.query.preview" class="button save" @click="addCity()">
           <span><i class="fa-regular fa-floppy-disk"></i></span>
-          <span class="title">Save</span>
+          <span class="title">{{ $t('common.actions.save.label') }}</span>
         </div>
       </div>
     </div>

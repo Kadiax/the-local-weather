@@ -17,12 +17,10 @@
   <div :class="['mobile-nav-menu', { active: isMenuActive }]">
     <ul class="menu-items">
       <li @click="closeMenu">
-        <RouterLink :to="{ name: 'dashboard' }"> <a href="#">Dashboard</a></RouterLink>
+        <RouterLink :to="{ name: 'dashboard' }">{{ $t('DashboardView.metaTitle') }}</RouterLink>
       </li>
       <li @click="closeMenu">
-        <RouterLink :to="{ name: 'about' }">
-          <a href="#about">About</a>
-        </RouterLink>
+        <RouterLink :to="{ name: 'about' }">{{ $t('AboutView.metaTitle') }}</RouterLink>
       </li>
     </ul>
   </div>
@@ -41,7 +39,7 @@
     <ul class="menu-items">
       <li>
         <RouterLink :to="{ name: 'dashboard' }">
-          <i class="fa-solid fa-home active"></i>
+          <i class="fa-solid fa-home"></i>
         </RouterLink>
       </li>
 

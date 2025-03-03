@@ -2,21 +2,21 @@
   <div class="sun-card">
     <div class="day-info-container">
       <div class="day-info">
-        <div class="label">Sunrise</div>
+        <div class="label">{{ $t('CityView.AsyncCityView.SunCard.Sunrisetitle') }}</div>
         <div class="time-info">
           <div class="time">{{ formattedSunrise.time }}</div>
           <div class="period">{{ formattedSunrise.period }}</div>
         </div>
       </div>
       <div class="day-info">
-        <div class="label">Sunset</div>
+        <div class="label">{{ $t('CityView.AsyncCityView.SunCard.Sunsettitle') }}</div>
         <div class="time-info">
           <div class="time">{{ formattedSunset.time }}</div>
           <div class="period">{{ formattedSunset.period }}</div>
         </div>
       </div>
       <div class="day-info">
-        <div class="label">Length of Day</div>
+        <div class="label">{{ $t('CityView.AsyncCityView.SunCard.LengthofDayTitle') }}</div>
         <div class="time-info">
           <div class="length">{{ formattedDayLength }}</div>
         </div>
