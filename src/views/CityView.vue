@@ -26,10 +26,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { uid } from 'uid';
   import { RouterLink, useRoute, useRouter } from 'vue-router';
   import { useCityStore } from '@/stores/cityStore';
+  import type { City } from '@/models/City';
   import AsyncCityView from '@/components/cityView/AsyncCityView.vue';
   import AsyncCityViewSkeleton from '@/components/cityView/skeleton/AsyncCityViewSkeleton.vue';
 
@@ -39,13 +40,13 @@
 
   // City Header
   const addCity = () => {
-    const newCity = {
+    const newCity: City = {
       id: uid(),
-      state: route.params.state,
-      city: route.params.city,
+      state: String(route.params.state),
+      city: String(route.params.city),
       coords: {
-        lat: route.query.lat,
-        lng: route.query.lng
+        lat: Number(route.query.lat),
+        lng: Number(route.query.lng)
       }
     };
 

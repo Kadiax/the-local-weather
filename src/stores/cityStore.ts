@@ -1,14 +1,5 @@
 import { defineStore } from 'pinia';
-
-interface City {
-  id: string;
-  state: string;
-  city: string;
-  coords: {
-    lat: number;
-    lng: number;
-  };
-}
+import type { City } from '@/models/City';
 
 export const useCityStore = defineStore('cityStore', {
   state: () => ({
