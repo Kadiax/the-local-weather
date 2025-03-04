@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class="high-low">
-            High: {{ roundedTemperature(weatherData?.main?.temp_max) }}&deg; Low:
-            {{ roundedTemperature(weatherData?.main?.temp_min) }}&deg;
+            {{ $t('common.units.description.highLabel') }} : {{ roundedTemperature(weatherData?.main?.temp_max) }}&deg;
+            {{ $t('common.units.description.lowLabel') }} : {{ roundedTemperature(weatherData?.main?.temp_min) }}&deg;
           </div>
         </div>
       </div>

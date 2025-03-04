@@ -4,7 +4,9 @@
       <div class="figures">
         <div class="today-temp">{{ roundedTemperature(city.weather.main.temp) }}&deg;</div>
         <div class="today-high-low">
-          H{{ roundedTemperature(city.weather.main.temp_max) }}&deg; L{{
+          {{ $t('common.units.description.highLabel').charAt(0) }}:{{
+            roundedTemperature(city.weather.main.temp_max)
+          }}&deg; {{ $t('common.units.description.lowLabel').charAt(0) }}:{{
             roundedTemperature(city.weather.main.temp_min)
           }}&deg;
         </div>

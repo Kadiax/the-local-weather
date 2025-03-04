@@ -13,7 +13,11 @@
         }
       },
       "units": {
-        "polluants": "μg/m³"
+        "polluants": "μg/m³",
+        "description": {
+          "highLabel": "High",
+          "lowLabel": "Low"
+        }
       }
     },
     "DashboardView": {

@@ -3,6 +3,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 25px 39px;
+  place-items: center;
+}
+
+.no-cities-message {
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
 }
 
 /*Tablets Laptops Desktops*/

@@ -1,10 +1,11 @@
 <template>
-  <p v-if="hasFetchWeatherError">{{ $t('DashboardView.CityList.fetchError') }}</p>
-  <div v-else class="saved-cities">
-    <template v-if="savedCities.length">
+  <div class="saved-cities">
+    <p v-if="hasFetchWeatherError">{{ $t('DashboardView.CityList.fetchError') }}</p>
+
+    <template v-else>
       <CityCard v-for="city in savedCities" :key="city.id" :city="city" @click="navigateToCity(city)" />
+      <p v-if="!savedCities.length" class="no-cities-message">{{ $t('DashboardView.CityList.noCities') }}</p>
     </template>
-    <p v-else>{{ $t('DashboardView.CityList.noCities') }}</p>
   </div>
 </template>
 
