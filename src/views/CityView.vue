@@ -10,7 +10,10 @@
             <span class="title">{{ $t('common.actions.back.label') }}</span>
           </div>
         </RouterLink>
-        <div v-if="route.query.preview" class="button save" @click="addCity()">
+        <div
+          v-if="!cityStore.isCityExist(Number(route.query.lat), Number(route.query.lng))"
+          class="button save"
+          @click="addCity()">
           <span><i class="fa-regular fa-floppy-disk"></i></span>
           <span class="title">{{ $t('common.actions.save.label') }}</span>
         </div>
@@ -53,7 +56,6 @@
     cityStore.addCity(newCity);
 
     const updatedQuery = structuredClone(route.query);
-    delete updatedQuery.preview;
     updatedQuery.id = newCity.id;
 
     router.replace({ query: updatedQuery });

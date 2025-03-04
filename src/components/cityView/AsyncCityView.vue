@@ -12,7 +12,7 @@
         <PollutionCard :polluantData="polluantData" />
       </div>
     </div>
-    <div v-if="!route.query.preview" class="remove-button">
+    <div v-if="cityStore.isCityExist(Number(route.query.lat), Number(route.query.lng))" class="remove-button">
       <button class="button remove" @click="removeCity">
         <i class="fa-solid fa-trash-can"></i>
         <span class="title">{{ $t('common.actions.remove.label') }}</span>

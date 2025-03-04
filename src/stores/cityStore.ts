@@ -7,12 +7,19 @@ export const useCityStore = defineStore('cityStore', {
   }),
 
   getters: {
-    getCities: (state) => state.savedCities
+    getCities: (state) => state.savedCities,
+    isCityExist:
+      (state) =>
+      (lat: number, lng: number): boolean => {
+        return state.savedCities.some((city) => city.coords.lat === lat && city.coords.lng === lng);
+      }
   },
 
   actions: {
     addCity(newCity: City) {
-      this.savedCities.push(newCity);
+      if (!this.isCityExist(newCity.coords.lat, newCity.coords.lng)) {
+        this.savedCities.push(newCity);
+      }
     },
 
     removeCity(cityId: string) {

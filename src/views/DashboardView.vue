@@ -78,8 +78,7 @@
       },
       query: {
         lat: cityData.geometry.coordinates[1],
-        lng: cityData.geometry.coordinates[0],
-        preview: true
+        lng: cityData.geometry.coordinates[0]
       }
     });
   };
