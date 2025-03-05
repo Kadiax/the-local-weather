@@ -74,7 +74,7 @@ The app will be live at: http://localhost:5173/ 🎉
 
 ## 🌐 **Live Demo**
 
-🚀 Try it live: your-deployment-link
+🚀 Try it live: https://the-local-weather-v2.netlify.app/
 
 ## ✨ **Best Practices Implemented**
 
