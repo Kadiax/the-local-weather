@@ -2,7 +2,7 @@
   <!-- Mobile Navigation -->
   <nav class="mobile-nav">
     <a href="#" class="logo">
-      <img src="@/assets/images/logo.svg" alt="" />
+      <img src="/logo.svg" alt="" />
       <div class="label">
         <span>The Local</span><br />
         <span>Weather</span>
@@ -29,7 +29,7 @@
   <nav class="desktop-nav">
     <RouterLink :to="{ name: 'dashboard' }">
       <a href="#" class="logo">
-        <img src="@/assets/images/logo.svg" alt="" />
+        <img src="/logo.svg" alt="" />
         <div class="label">
           <span>The Local</span><br />
           <span>Weather</span>
