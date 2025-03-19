@@ -22,6 +22,9 @@
       <li @click="closeMenu">
         <RouterLink :to="{ name: 'about' }">{{ $t('AboutView.metaTitle') }}</RouterLink>
       </li>
+      <li @click="closeMenu">
+        <i @click="toggleTheme" :class="['fa-solid', isDarkTheme ? 'fa-sun' : 'fa-moon']"></i>
+      </li>
     </ul>
   </div>
 
@@ -48,6 +51,9 @@
           <i class="fa-solid fa-circle-info"></i>
         </RouterLink>
       </li>
+      <li>
+        <i @click="toggleTheme" :class="['fa-solid', isDarkTheme ? 'fa-sun' : 'fa-moon']"></i>
+      </li>
     </ul>
   </nav>
 
@@ -55,10 +61,11 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
 
   // Reactive state to track menu visibility
   const isMenuActive = ref(false);
+  const isDarkTheme = ref(true);
 
   // Toggle the menu
   const toggleMenu = () => {
@@ -69,6 +76,21 @@
   const closeMenu = () => {
     isMenuActive.value = false;
   };
+
+  //Toggle Theme
+  const toggleTheme = () => {
+    isDarkTheme.value = !isDarkTheme.value;
+    document.body.classList.toggle('light-theme');
+    localStorage.setItem('theme', isDarkTheme.value ? 'dark' : 'light');
+  };
+
+  onMounted(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      isDarkTheme.value = false;
+      document.body.classList.toggle('light-theme');
+    }
+  });
 </script>
 
 <style>
@@ -139,6 +161,10 @@
     pointer-events: none;
     top: -100%;
     transition: 400ms;
+  }
+
+  body.light-theme .mobile-nav-menu {
+    background: var(--color-bg-primary);
   }
 
   .mobile-nav-menu.active {

@@ -46,6 +46,10 @@
     width: 90%;
   }
 
+  body.light-theme .about .container {
+    background: radial-gradient(circle, #d6e4f1 0%, #a9c9e0 100%);
+  }
+
   .about .container .description {
     display: flex;
     flex-direction: column;
