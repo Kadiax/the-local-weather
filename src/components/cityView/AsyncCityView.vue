@@ -4,7 +4,7 @@
     <div class="figures">
       <div class="main">
         <TempCard :city="route.params.city" :weatherData="weatherData" />
-        <HourlyCard :weatherData="weatherData" />
+        <HourlyCard :forecastData="forecastData" />
         <SunCard :weatherData="weatherData" />
       </div>
       <div class="side">
@@ -37,7 +37,9 @@
   const cityStore = useCityStore();
 
   const weatherData = ref(null);
+  const forecastData = ref(null);
   const polluantData = ref(null);
+
   const hasFetchWeatherError = ref(false);
 
   const coordinates = computed(() => ({
@@ -73,8 +75,6 @@
       hour.currentTime = hour.dt * 1000 + localOffset + timezoneOffset;
     });
 
-    weather.hours = [...forecast.list];
-
     // Process sunrise and sunset times
     weather.sys.sunrise = weather.sys.sunrise * 1000 + localOffset + timezoneOffset;
     weather.sys.sunset = weather.sys.sunset * 1000 + localOffset + timezoneOffset;
@@ -90,6 +90,7 @@
     });
 
     weatherData.value = weather;
+    forecastData.value = forecast;
   };
 
   // Remove city from local storage

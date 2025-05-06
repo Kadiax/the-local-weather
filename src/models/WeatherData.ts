@@ -1,8 +1,15 @@
 export interface WeatherData {
   dt?: number;
   currentTime?: number;
-  main?: WeatherMain;
-  wind?: WeatherWind;
+  timezone?: number;
+  main?: {
+    temp?: number;
+    pressure?: number;
+    humidity?: number;
+  };
+  wind?: {
+    speed?: number;
+  };
   weather?: {
     icon?: string;
   }[];
@@ -12,15 +19,15 @@ export interface WeatherData {
     dayLength?: string;
   };
 }
-
-interface WeatherMain {
-  temp?: number;
-  pressure?: number;
-  humidity?: number;
-}
-
-interface WeatherWind {
-  speed?: number;
+export interface ForecastData {
+  list?: {
+    dt?: number;
+    main?: { temp?: number };
+    weather?: {
+      icon?: string;
+    }[];
+    currentTime?: number;
+  }[];
 }
 
 export interface PolluantData {

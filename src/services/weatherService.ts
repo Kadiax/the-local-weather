@@ -1,4 +1,4 @@
-import type { PolluantData, WeatherData } from '@/models/WeatherData';
+import type { PolluantData, WeatherData, ForecastData } from '@/models/WeatherData';
 import axios from 'axios';
 
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
@@ -16,7 +16,7 @@ export const fetchWeather = async (lat: number, lon: number): Promise<WeatherDat
   return response.data;
 };
 
-export const fetchForecast = async (lat: number, lon: number): Promise<WeatherData> => {
+export const fetchForecast = async (lat: number, lon: number): Promise<ForecastData> => {
   const response = await axios.get(`${API_BASE_URL}/forecast`, {
     params: {
       lat,

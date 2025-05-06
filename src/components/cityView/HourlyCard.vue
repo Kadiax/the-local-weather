@@ -18,17 +18,15 @@
 
 <script setup lang="ts">
   import { computed } from 'vue';
-  import type { WeatherData } from '@/models/WeatherData';
+  import type { ForecastData } from '@/models/WeatherData';
   import { roundedTemperature } from '@/helpers/roundedTemperature';
   import { weatherIconUrl } from '@/helpers/weatherIconUrl';
 
   const props = defineProps<{
-    weatherData: {
-      hours?: WeatherData[];
-    };
+    forecastData: ForecastData;
   }>();
 
-  const hourlyWeather = computed(() => props.weatherData?.hours || []);
+  const hourlyWeather = computed(() => props.forecastData?.list || []);
 
   const formatDate = (timestamp?: number): string =>
     timestamp
