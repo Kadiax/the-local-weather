@@ -1,50 +1,22 @@
-import type { PolluantData, WeatherData, ForecastData } from '@/models/WeatherData';
+import type { WeatherData } from '@/models/WeatherData';
 import axios from 'axios';
 
-const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
-const API_KEY = import.meta.env.VITE_OPEN_WEATHER_MAP_API_KEY;
-
 export const fetchWeather = async (lat: number, lon: number): Promise<WeatherData> => {
-  const response = await axios.get(`${API_BASE_URL}/weather`, {
+  const response = await axios.get('/api/weather/', {
     params: {
       lat,
-      lon,
-      appid: API_KEY,
-      units: 'metric'
-    }
-  });
-  return response.data;
-};
-
-const fetchForecast = async (lat: number, lon: number): Promise<ForecastData> => {
-  const response = await axios.get(`${API_BASE_URL}/forecast`, {
-    params: {
-      lat,
-      lon,
-      appid: API_KEY,
-      units: 'metric'
-    }
-  });
-  return response.data;
-};
-
-const fetchAirPollution = async (lat: number, lon: number): Promise<PolluantData> => {
-  const response = await axios.get(`${API_BASE_URL}/air_pollution`, {
-    params: {
-      lat,
-      lon,
-      appid: API_KEY
+      lon
     }
   });
   return response.data;
 };
 
 export const fetchAllWeatherData = async (lat: number, lon: number) => {
-  const [weather, forecast, pollution] = await Promise.all([
-    fetchWeather(lat, lon),
-    fetchForecast(lat, lon),
-    fetchAirPollution(lat, lon)
-  ]);
-
-  return { weather, forecast, pollution };
+  const response = await axios.get('/api/weather/all', {
+    params: {
+      lat,
+      lon
+    }
+  });
+  return response.data;
 };
