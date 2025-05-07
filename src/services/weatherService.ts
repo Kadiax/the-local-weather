@@ -16,7 +16,7 @@ export const fetchWeather = async (lat: number, lon: number): Promise<WeatherDat
   return response.data;
 };
 
-export const fetchForecast = async (lat: number, lon: number): Promise<ForecastData> => {
+const fetchForecast = async (lat: number, lon: number): Promise<ForecastData> => {
   const response = await axios.get(`${API_BASE_URL}/forecast`, {
     params: {
       lat,
@@ -28,7 +28,7 @@ export const fetchForecast = async (lat: number, lon: number): Promise<ForecastD
   return response.data;
 };
 
-export const fetchAirPollution = async (lat: number, lon: number): Promise<PolluantData> => {
+const fetchAirPollution = async (lat: number, lon: number): Promise<PolluantData> => {
   const response = await axios.get(`${API_BASE_URL}/air_pollution`, {
     params: {
       lat,
