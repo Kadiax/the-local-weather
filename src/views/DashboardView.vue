@@ -57,7 +57,7 @@
 
       MapboxService.fetchLocationSearch(query)
         .then((locationSearch) => {
-          cityResults.value = locationSearch;
+          cityResults.value = locationSearch.features;
           hasSearchError.value = false;
         })
         .catch(() => {
