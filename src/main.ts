@@ -5,6 +5,9 @@ import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persistedstate';
 import { createI18n } from 'vue-i18n';
 import messages from '@/assets/localization/messages.json';
+import { validateEnv } from '@/utils/validateEnv';
+
+validateEnv(['VITE_API_BASE_URL', 'VITE_FRONT_SECRET_KEY']);
 
 const app = createApp(App);
 

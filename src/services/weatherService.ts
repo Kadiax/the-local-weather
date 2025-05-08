@@ -1,8 +1,8 @@
 import type { WeatherData } from '@/models/WeatherData';
-import axios from 'axios';
+import axios from '@/lib/axiosInstance';
 
 export const fetchWeather = async (lat: number, lon: number): Promise<WeatherData> => {
-  const response = await axios.get('/api/weather/', {
+  const response = await axios.get('/weather/', {
     params: {
       lat,
       lon
@@ -12,7 +12,7 @@ export const fetchWeather = async (lat: number, lon: number): Promise<WeatherDat
 };
 
 export const fetchAllWeatherData = async (lat: number, lon: number) => {
-  const response = await axios.get('/api/weather/all', {
+  const response = await axios.get('/weather/all', {
     params: {
       lat,
       lon

@@ -1,8 +1,8 @@
 import type { LocationSearch } from '@/models/LocationSearch';
-import axios from 'axios';
+import axios from '@/lib/axiosInstance';
 
 export const fetchLocationSearch = async (query: string): Promise<LocationSearch> => {
-  const response = await axios.get('/api/map', {
+  const response = await axios.get('/map', {
     params: {
       city: query
     }
