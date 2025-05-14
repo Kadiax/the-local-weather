@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
@@ -18,5 +18,10 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '/api')
       }
     }
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    include: ['**/*.{test,spec}.{js,ts,jsx,tsx}']
   }
 });
