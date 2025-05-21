@@ -2,6 +2,14 @@
 
 📍 **A modern weather app built with Vue 3, Pinia, OpenWeatherMap API, and Mapbox.**
 
+---
+
+## 🌐 **Live Demo**
+
+🚀 Try it live: https://the-local-weather-v2.netlify.app/
+
+---
+
 ![Project Banner](public/images/figma/banner.png)
 
 ---
@@ -71,10 +79,6 @@ npm run dev
 ```
 
 The app will be live at: http://localhost:5173/ 🎉
-
-## 🌐 **Live Demo**
-
-🚀 Try it live: https://the-local-weather-v2.netlify.app/
 
 ## ✨ **Best Practices Implemented**
 
